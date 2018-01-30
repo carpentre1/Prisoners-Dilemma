@@ -20,59 +20,60 @@ namespace PrisonersDilemma
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool playerStayedSilent = true;
-        bool partnerStayedSilent = true;
-        int playerYears = 0;//years in prison
-        int partnerYears = 0;
+        bool playerSubmittedCoin = true;
+        bool partnerSubmittedCoin = true;
+        int playerCoins = 0;//the total amount of coins the player has accrued
+        int partnerCoins = 0;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void buttonSilent_Click(object sender, RoutedEventArgs e)
-        {
-            playerStayedSilent = true;
-            RunSimulation();
-        }
-
-        private void buttonRat_Click(object sender, RoutedEventArgs e)
-        {
-            playerStayedSilent = false;
-            RunSimulation();
-        }
         private void RunSimulation()
         {
             Random rnd = new Random();
-            partnerStayedSilent = Convert.ToBoolean(rnd.Next(0, 2));
-            if(playerStayedSilent && partnerStayedSilent)//both silent
+            partnerSubmittedCoin = Convert.ToBoolean(rnd.Next(0, 2));
+            if(playerSubmittedCoin && partnerSubmittedCoin)//both contributed
             {
-                playerYears += 1;
-                partnerYears += 1;
-                labelPlayerResult.Content = "You got 1 year in prison because both of you stayed silent.";
-                labelPartnerResult.Content = "Your partner got 1 year in prison because both of you stayed silent.";
+                playerCoins += 2;
+                partnerCoins += 2;
+                labelPlayerResult.Content = "You got 2 coins because both of you contributed.";
+                labelPartnerResult.Content = "Your partner got 2 coins because both of you contributed.";
 
             }
-            else if(!playerStayedSilent && !partnerStayedSilent)//both ratted
+            else if(!playerSubmittedCoin && !partnerSubmittedCoin)//both didn't contribute
             {
-                playerYears += 2;
-                partnerYears += 2;
-                labelPlayerResult.Content = "You got 2 years in prison because you both ratted each other out!";
-                labelPartnerResult.Content = "Your partner got  2 years in prison because you both ratted each other out!";
+                playerCoins += 0;
+                partnerCoins += 0;
+                labelPlayerResult.Content = "You got nothing because neither of you contributed!";
+                labelPartnerResult.Content = "Your partner got nothing because neither of you contributed!";
             }
-            else if (!playerStayedSilent && partnerStayedSilent)//player ratted
+            else if (!playerSubmittedCoin && partnerSubmittedCoin)//player didn't contribute
             {
-                playerYears += 0;
-                partnerYears += 3;
-                labelPlayerResult.Content = "You got 0 years in prison because you ratted out your partner and he stayed silent.";
-                labelPartnerResult.Content = "Your partner got 3 years in prison because you ratted him out but he stayed silent.";
+                playerCoins += 3;
+                partnerCoins -= 1;
+                labelPlayerResult.Content = "You got 3 coins because you didn't contribute but your partner did.";
+                labelPartnerResult.Content = "Your partner lost 1 coin because they contributed you didn't.";
             }
-            else if (playerStayedSilent && !partnerStayedSilent)//partner ratted
+            else if (playerSubmittedCoin && !partnerSubmittedCoin)//partner didn't contribute
             {
-                playerYears += 3;
-                partnerYears += 0;
-                labelPlayerResult.Content = "You got 3 years in prison because your partner ratted you out but you stayed silent.";
-                labelPartnerResult.Content = "Your partner got 0 years in prison because he ratted you out but you stayed silent.";
+                playerCoins -= 1;
+                partnerCoins += 3;
+                labelPlayerResult.Content = "You lost 1 coin because you contributed but your partner didn't.";
+                labelPartnerResult.Content = "Your partner got 3 coins because you contributed but your partner didn't.";
             }
+        }
+
+        private void buttonContribute_Click(object sender, RoutedEventArgs e)
+        {
+            playerSubmittedCoin = true;
+            RunSimulation();
+        }
+
+        private void buttonDontContribute_Click(object sender, RoutedEventArgs e)
+        {
+            playerSubmittedCoin = false;
+            RunSimulation();
         }
     }
 }

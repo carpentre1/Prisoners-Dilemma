@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="buttonSilent" Content="Stay silent" HorizontalAlignment="Left" Margin="41,119,0,0" VerticalAlignment="Top" Width="98" Click="buttonSilent_Click"/>
-        <Button x:Name="buttonRat" Content="Rat out partner" HorizontalAlignment="Left" Margin="41,144,0,0" VerticalAlignment="Top" Width="98" Click="buttonRat_Click"/>
         <Label x:Name="labelPlayerResult" Content="Label" HorizontalAlignment="Left" Margin="41,164,0,0" VerticalAlignment="Top" Height="67" Width="436"/>
         <Label x:Name="labelPartnerResult" Content="Label" HorizontalAlignment="Left" Margin="41,231,0,0" VerticalAlignment="Top" Height="78" Width="436"/>
         <TextBlock HorizontalAlignment="Left" Margin="41,23,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FFCB5151"/>
         <TextBlock HorizontalAlignment="Left" Margin="355,23,0,0" TextWrapping="Wrap" Text="Partner" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FF5172CB"/>
+        <Button x:Name="buttonContribute" Content="Contribute coin" HorizontalAlignment="Left" Margin="41,114,0,0" VerticalAlignment="Top" Width="122" Click="buttonContribute_Click"/>
+        <Button x:Name="buttonDontContribute" Content="Don't contribute coin" HorizontalAlignment="Left" Margin="41,139,0,0" VerticalAlignment="Top" Width="122" Click="buttonDontContribute_Click"/>
 
     </Grid>
 </Window>
