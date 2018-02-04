@@ -5,14 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrisonersDilemma"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label x:Name="labelPlayerResult" Content="Label" HorizontalAlignment="Left" Margin="41,164,0,0" VerticalAlignment="Top" Height="67" Width="436"/>
-        <Label x:Name="labelPartnerResult" Content="Label" HorizontalAlignment="Left" Margin="41,231,0,0" VerticalAlignment="Top" Height="78" Width="436"/>
-        <TextBlock HorizontalAlignment="Left" Margin="41,23,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FFCB5151"/>
-        <TextBlock HorizontalAlignment="Left" Margin="355,23,0,0" TextWrapping="Wrap" Text="Partner" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FF5172CB"/>
-        <Button x:Name="buttonContribute" Content="Contribute coin" HorizontalAlignment="Left" Margin="41,114,0,0" VerticalAlignment="Top" Width="122" Click="buttonContribute_Click"/>
-        <Button x:Name="buttonDontContribute" Content="Don't contribute coin" HorizontalAlignment="Left" Margin="41,139,0,0" VerticalAlignment="Top" Width="122" Click="buttonDontContribute_Click"/>
+        Title="MainWindow" Height="350" Width="1031.115">
+	<Grid>
+		<Label x:Name="labelPlayerResult" Content="" HorizontalAlignment="Left" Margin="41,173,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
+		<Label x:Name="labelPartnerResult" Content="" HorizontalAlignment="Left" Margin="41,204,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
+		<TextBlock HorizontalAlignment="Left" Margin="41,23,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FFCB5151"/>
+		<TextBlock HorizontalAlignment="Left" Margin="355,23,0,0" TextWrapping="Wrap" Text="Partner" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FF5172CB"/>
+		<Button x:Name="buttonContribute" Content="Contribute coin" HorizontalAlignment="Left" Margin="41,114,0,0" VerticalAlignment="Top" Width="122" Click="buttonContribute_Click"/>
+		<Button x:Name="buttonDontContribute" Content="Don't contribute coin" HorizontalAlignment="Left" Margin="41,139,0,0" VerticalAlignment="Top" Width="122" Click="buttonDontContribute_Click"/>
+		<Label x:Name="labelPlayerGained" Content="0" HorizontalAlignment="Left" Margin="139,43,0,0" VerticalAlignment="Top" Height="33" Width="37" FontSize="20" Foreground="#FFC10B0B"/>
+		<Label x:Name="labelPartnerGained" Content="0" HorizontalAlignment="Left" Margin="316,43,0,0" VerticalAlignment="Top" Height="33" Width="39" FontSize="20" Foreground="#FF357A9B"/>
+		<Label x:Name="labelPartnerTotal" Content="0" HorizontalAlignment="Left" Margin="249,43,0,0" VerticalAlignment="Top" Height="33" Width="62" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FF357A9B"/>
+		<Label x:Name="labelPlayerTotal" Content="0" HorizontalAlignment="Left" Margin="181,43,0,0" VerticalAlignment="Top" Height="33" Width="49" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FFC10B0B"/>
+		<Label x:Name="labelPartnerTotal_Copy" Content="Partner behavior:" HorizontalAlignment="Left" Margin="355,76,0,0" VerticalAlignment="Top" Height="26" Width="122" RenderTransformOrigin="1.286,2.148" FontSize="14" Foreground="#FF357A9B"/>
+		<RadioButton x:Name="radioRandom" Content="Contribute randomly" HorizontalAlignment="Left" Margin="355,105,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="138" IsChecked="True" Checked="radioRandom_Checked"/>
+		<RadioButton x:Name="radioAlways" Content="Always contribute" HorizontalAlignment="Left" Margin="355,127,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioAlways_Checked"/>
+		<RadioButton x:Name="radioNever" Content="Never contribute" HorizontalAlignment="Left" Margin="355,147,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioNever_Checked"/>
+		<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="181,43,0,0" VerticalAlignment="Top" Width="130"/>
+		<Label Content="Total coins" HorizontalAlignment="Left" Margin="183,73,0,0" VerticalAlignment="Top" Width="128"/>
 
-    </Grid>
+	</Grid>
 </Window>
