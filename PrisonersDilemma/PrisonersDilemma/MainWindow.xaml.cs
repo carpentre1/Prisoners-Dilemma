@@ -16,8 +16,9 @@ using System.Windows.Shapes;
 
 /*Things needed:
  * A reset button to erase the current scores
- * A couple different AI behaviors the player can choose from such as "always contributes", "never contributes", "contributes until you don't". These will allow the player to see the
- *   difference in results. It would probably be best to make each behavior unnamed so the player has to figure out what they do by experimenting. Right now the AI chooses randomly.
+ * 
+ * A quick explanation of the prisoner's dilemma so the player understands the game, and then a way to test their knowledge after they've played the game
+ *   The blank space off to the right will be where this is done
  * 
  * Documentation about the design process and testing (included as a word doc in the main folder)
  * Sources for where we got our research from
