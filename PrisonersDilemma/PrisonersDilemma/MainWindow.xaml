@@ -6,23 +6,30 @@
         xmlns:local="clr-namespace:PrisonersDilemma"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="1031.115">
-	<Grid>
-		<Label x:Name="labelPlayerResult" Content="" HorizontalAlignment="Left" Margin="41,173,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
-		<Label x:Name="labelPartnerResult" Content="" HorizontalAlignment="Left" Margin="41,204,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
-		<TextBlock HorizontalAlignment="Left" Margin="41,23,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FFCB5151"/>
-		<TextBlock HorizontalAlignment="Left" Margin="355,23,0,0" TextWrapping="Wrap" Text="Partner" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FF5172CB"/>
-		<Button x:Name="buttonContribute" Content="Contribute coin" HorizontalAlignment="Left" Margin="41,114,0,0" VerticalAlignment="Top" Width="122" Click="buttonContribute_Click"/>
-		<Button x:Name="buttonDontContribute" Content="Don't contribute coin" HorizontalAlignment="Left" Margin="41,139,0,0" VerticalAlignment="Top" Width="122" Click="buttonDontContribute_Click"/>
-		<Label x:Name="labelPlayerGained" Content="0" HorizontalAlignment="Left" Margin="139,43,0,0" VerticalAlignment="Top" Height="33" Width="37" FontSize="20" Foreground="#FFC10B0B"/>
-		<Label x:Name="labelPartnerGained" Content="0" HorizontalAlignment="Left" Margin="316,43,0,0" VerticalAlignment="Top" Height="33" Width="39" FontSize="20" Foreground="#FF357A9B"/>
-		<Label x:Name="labelPartnerTotal" Content="0" HorizontalAlignment="Left" Margin="249,43,0,0" VerticalAlignment="Top" Height="33" Width="62" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FF357A9B"/>
-		<Label x:Name="labelPlayerTotal" Content="0" HorizontalAlignment="Left" Margin="181,43,0,0" VerticalAlignment="Top" Height="33" Width="49" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FFC10B0B"/>
-		<Label x:Name="labelPartnerTotal_Copy" Content="Partner behavior:" HorizontalAlignment="Left" Margin="355,76,0,0" VerticalAlignment="Top" Height="26" Width="122" RenderTransformOrigin="1.286,2.148" FontSize="14" Foreground="#FF357A9B"/>
-		<RadioButton x:Name="radioRandom" Content="Contribute randomly" HorizontalAlignment="Left" Margin="355,105,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="138" IsChecked="True" Checked="radioRandom_Checked"/>
-		<RadioButton x:Name="radioAlways" Content="Always contribute" HorizontalAlignment="Left" Margin="355,127,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioAlways_Checked"/>
-		<RadioButton x:Name="radioNever" Content="Never contribute" HorizontalAlignment="Left" Margin="355,147,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioNever_Checked"/>
-		<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="181,43,0,0" VerticalAlignment="Top" Width="130"/>
-		<Label Content="Total coins" HorizontalAlignment="Left" Margin="183,73,0,0" VerticalAlignment="Top" Width="128"/>
+    <Grid RenderTransformOrigin="0.522,0.38">
+        <Label x:Name="labelPlayerResult" Content="" HorizontalAlignment="Left" Margin="41,173,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
+        <Label x:Name="labelPartnerResult" Content="" HorizontalAlignment="Left" Margin="41,204,0,0" VerticalAlignment="Top" Height="26" Width="436"/>
+        <TextBlock HorizontalAlignment="Left" Margin="41,23,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FFCB5151"/>
+        <TextBlock HorizontalAlignment="Left" Margin="355,23,0,0" TextWrapping="Wrap" Text="Partner" VerticalAlignment="Top" Height="53" Width="98" Padding="15" TextAlignment="Center" Foreground="Black" Background="#FF5172CB"/>
+        <Button x:Name="buttonContribute" Content="Contribute coin" HorizontalAlignment="Left" Margin="41,114,0,0" VerticalAlignment="Top" Width="122" Click="buttonContribute_Click"/>
+        <Button x:Name="buttonDontContribute" Content="Don't contribute coin" HorizontalAlignment="Left" Margin="41,139,0,0" VerticalAlignment="Top" Width="122" Click="buttonDontContribute_Click"/>
+        <Label x:Name="labelPlayerGained" Content="0" HorizontalAlignment="Left" Margin="139,43,0,0" VerticalAlignment="Top" Height="33" Width="37" FontSize="20" Foreground="#FFC10B0B"/>
+        <Label x:Name="labelPartnerGained" Content="0" HorizontalAlignment="Left" Margin="316,43,0,0" VerticalAlignment="Top" Height="33" Width="39" FontSize="20" Foreground="#FF357A9B"/>
+        <Label x:Name="labelPartnerTotal" Content="0" HorizontalAlignment="Left" Margin="249,43,0,0" VerticalAlignment="Top" Height="33" Width="62" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FF357A9B"/>
+        <Label x:Name="labelPlayerTotal" Content="0" HorizontalAlignment="Left" Margin="181,43,0,0" VerticalAlignment="Top" Height="33" Width="49" RenderTransformOrigin="1.286,2.148" FontSize="20" Foreground="#FFC10B0B"/>
+        <Label x:Name="labelPartnerTotal_Copy" Content="Partner behavior:" HorizontalAlignment="Left" Margin="355,76,0,0" VerticalAlignment="Top" Height="26" Width="122" RenderTransformOrigin="1.286,2.148" FontSize="14" Foreground="#FF357A9B"/>
+        <RadioButton x:Name="radioRandom" Content="Contribute randomly" HorizontalAlignment="Left" Margin="355,105,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="138" IsChecked="True" Checked="radioRandom_Checked"/>
+        <RadioButton x:Name="radioAlways" Content="Always contribute" HorizontalAlignment="Left" Margin="355,127,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioAlways_Checked"/>
+        <RadioButton x:Name="radioNever" Content="Never contribute" HorizontalAlignment="Left" Margin="355,147,0,0" VerticalAlignment="Top" GroupName="Behavior" Width="122" Checked="radioNever_Checked"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="181,43,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Total coins" HorizontalAlignment="Left" Margin="183,73,0,0" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Created by Justin Carpenter and Jacob Kryca" HorizontalAlignment="Left" Height="29" Margin="636,33,0,0" VerticalAlignment="Top" Width="248" RenderTransformOrigin="0.496,0.467"/>
+        <TextBlock x:Name="Prisoners_Dilemma_textBox" HorizontalAlignment="Left" Height="177" Margin="588,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" Text="Prisoners Dilemma is a situation where two individuals are pitted against another. They are given 2 options either blame the other for the crime and possibly gain immunity or do not give the other up. If they both refuse to cooperate they are given 1 year in prison each. If one gives up the other and the other refuses to cooperate, the one who blamed the other has 0 prison time where the other has 3 years. If both blame the other then they both get 2 years."/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="220,124,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="I_understandButton" Content="I understand the Prisoner's Dilemma" HorizontalAlignment="Left" Margin="689,253,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click_1"/>
+        <Button x:Name="StayQuiteButton" Content="Stay Quite" HorizontalAlignment="Left" Margin="588,272,0,0" VerticalAlignment="Top" Width="75" Click="StayQuiteButton_Click" Opacity="0"/>
+        <Button x:Name="Betray_Partner_Button" Content="Betray Partner" HorizontalAlignment="Left" Margin="908,272,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click_2" Opacity="0"/>
+        <Button x:Name="ContinueButton" Content="Continue" HorizontalAlignment="Left" Margin="749,280,0,0" VerticalAlignment="Top" Width="75" Click="ContinueButton_Click" Opacity="0"/>
 
-	</Grid>
+    </Grid>
 </Window>

@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 
 /*Things needed:
- * A reset button to erase the current scores
+ * DONE A reset button to erase the current scores
  * 
- * A quick explanation of the prisoner's dilemma so the player understands the game, and then a way to test their knowledge after they've played the game
+ * DONE A quick explanation of the prisoner's dilemma so the player understands the game, and then a way to test their knowledge after they've played the game
  *   The blank space off to the right will be where this is done
  * 
  * Documentation about the design process and testing (included as a word doc in the main folder)
  * Sources for where we got our research from
- * Our names added to the UI
+ * DONE Our names added to the UI 
  * */
 namespace PrisonersDilemma
 {
@@ -31,6 +31,9 @@ namespace PrisonersDilemma
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+        int run = 0;
+
         bool playerSubmittedCoin = true;
         bool partnerSubmittedCoin = true;
         int playerCoins = 0;//the total amount of coins the player has accrued
@@ -41,6 +44,7 @@ namespace PrisonersDilemma
 
         string behavior = "random";//the behavior the AI will use for deciding contribution: random, always, never
 
+        string TestChoice = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -163,5 +167,142 @@ namespace PrisonersDilemma
         {
             behavior = "never";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)// reset button clears all coin data
+        {
+            playerCoins = 0;
+            partnerCoins = 0;
+            labelPlayerTotal.Content = playerCoins;
+            labelPartnerTotal.Content = partnerCoins;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)// I understand Prisoner's Dilemma button brings up dialogue for evaluating
+        {
+            I_understandButton.Opacity = 0;// hides the I understand button 
+            Prisoners_Dilemma_textBox.Text = "You and your partner are captured for a crime. If you know that your partner is going to stay quite what choice should you make so that is it the best choice for both of you?";
+            
+            StayQuiteButton.Opacity = 100;// shows Stay quite button
+            Betray_Partner_Button.Opacity = 100;// shows Betray PartnerButton
+
+        }
+
+        private void Test()// Runs the test
+        {
+
+
+            if (run == 1)
+            {
+                switch (TestChoice)
+                {
+                    case "StayQuite":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "That is correct! If neither of you give up the other you each only serve 1 year so 2 years in total for the group";
+                            
+                            break;
+                        }
+
+                    case "BetrayPartner":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "That is incorrect please try again";
+                            run--;
+                            break;
+                        }
+
+
+
+                }// end of switch
+            }// end of if
+            if (run == 2)
+            {
+                
+                switch (TestChoice)
+                {
+                    case "StayQuite":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "Incorrect if your partner is going to give you up you will serve 3 years and your partner will serve 0. Please try again";
+                            run--;
+                            break;
+                        }
+
+                    case "BetrayPartner":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "Correct if your partner is going to give you up the best choice for you is to also give him up so that you only serve 2 years rather than 3 ";
+
+                            break;
+                        }
+                }
+            
+           
+
+
+           
+
+                
+
+
+
+            }// end of if
+
+
+            if (run == 3)
+            {
+                
+
+                switch (TestChoice)
+                {
+
+                    case "StayQuite":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "Incorrect if your partner isn't going to give you up you will serve 1 year. Please Try Again";
+                            run--;
+                            break;
+                        }
+
+                    case "BetrayPartner":
+                        {
+                            Prisoners_Dilemma_textBox.Text = "Correct if your partner isn't going to give you up the best choice for you is to also give him up so that you serve 0 years rather than 1 ";
+
+                            break;
+                        }
+
+
+                }// end of switch
+            }
+
+
+            //Prisoners_Dilemma_textBox.Text = "Congratulations you understand the prisoner's dilemma";
+        }// end of Test
+
+            private void StayQuiteButton_Click(object sender, RoutedEventArgs e)
+            {
+            run++;
+                TestChoice = "StayQuite";
+                Test();
+            ContinueButton.Opacity = 100;
+        }
+
+            private void Button_Click_2(object sender, RoutedEventArgs e)
+            {
+            run++;
+            TestChoice = "BetrayPartner";
+                Test();
+            ContinueButton.Opacity = 100;
+        }
+
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (run == 1)
+            {
+                ContinueButton.Opacity = 0;
+                Prisoners_Dilemma_textBox.Text = " If you know that your partner is going to give you up what choice should you make so that is it the best choice for you?";
+            }
+
+            if (run == 2)
+            {
+                ContinueButton.Opacity = 0;
+                Prisoners_Dilemma_textBox.Text = " If you know that your partner isn't going to give you up what choice should you make so that is it the best choice for you?";
+            }
+        }
     }
-}
+    }
+
