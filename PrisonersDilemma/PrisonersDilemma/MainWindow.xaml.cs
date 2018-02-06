@@ -179,9 +179,9 @@ namespace PrisonersDilemma
         private void Button_Click_1(object sender, RoutedEventArgs e)// I understand Prisoner's Dilemma button brings up dialogue for evaluating
         {
             I_understandButton.Opacity = 0;// hides the I understand button 
-            Prisoners_Dilemma_textBox.Text = "You and your partner are captured for a crime. If you know that your partner is going to stay quite what choice should you make so that is it the best choice for both of you?";
+            Prisoners_Dilemma_textBox.Text = "You and your partner are captured for a crime. If you know that your partner is going to stay quiet what choice should you make so that is it the best choice for both of you?";
             
-            StayQuiteButton.Opacity = 100;// shows Stay quite button
+            StayQuietButton.Opacity = 100;// shows Stay quiet button
             Betray_Partner_Button.Opacity = 100;// shows Betray PartnerButton
 
         }
@@ -194,16 +194,16 @@ namespace PrisonersDilemma
             {
                 switch (TestChoice)
                 {
-                    case "StayQuite":
+                    case "StayQuiet":
                         {
-                            Prisoners_Dilemma_textBox.Text = "That is correct! If neither of you give up the other you each only serve 1 year so 2 years in total for the group";
+                            Prisoners_Dilemma_textBox.Text = "That is correct! If neither of you give up the other you each only serve 1 year, so 2 years in total for the group.";
                             
                             break;
                         }
 
                     case "BetrayPartner":
                         {
-                            Prisoners_Dilemma_textBox.Text = "That is incorrect please try again";
+                            Prisoners_Dilemma_textBox.Text = "That is incorrect, please try again";
                             run--;
                             break;
                         }
@@ -217,16 +217,16 @@ namespace PrisonersDilemma
                 
                 switch (TestChoice)
                 {
-                    case "StayQuite":
+                    case "StayQuiet":
                         {
-                            Prisoners_Dilemma_textBox.Text = "Incorrect if your partner is going to give you up you will serve 3 years and your partner will serve 0. Please try again";
+                            Prisoners_Dilemma_textBox.Text = "Incorrect, if your partner is going to give you up you will serve 3 years and your partner will serve 0. Please try again.";
                             run--;
                             break;
                         }
 
                     case "BetrayPartner":
                         {
-                            Prisoners_Dilemma_textBox.Text = "Correct if your partner is going to give you up the best choice for you is to also give him up so that you only serve 2 years rather than 3 ";
+                            Prisoners_Dilemma_textBox.Text = "Correct, if your partner is going to give you up then the best choice for you is to also give him up so that you only serve 2 years rather than 3.";
 
                             break;
                         }
@@ -251,16 +251,16 @@ namespace PrisonersDilemma
                 switch (TestChoice)
                 {
 
-                    case "StayQuite":
+                    case "StayQuiet":
                         {
-                            Prisoners_Dilemma_textBox.Text = "Incorrect if your partner isn't going to give you up you will serve 1 year. Please Try Again";
+                            Prisoners_Dilemma_textBox.Text = "Incorrect, if your partner isn't going to give you up you will serve 1 year. Please try again.";
                             run--;
                             break;
                         }
 
                     case "BetrayPartner":
                         {
-                            Prisoners_Dilemma_textBox.Text = "Correct if your partner isn't going to give you up the best choice for you is to also give him up so that you serve 0 years rather than 1 ";
+                            Prisoners_Dilemma_textBox.Text = "Correct, if your partner isn't going to give you up the best choice for you is to also give him up so that you serve 0 years rather than 1.";
 
                             break;
                         }
@@ -273,10 +273,10 @@ namespace PrisonersDilemma
             //Prisoners_Dilemma_textBox.Text = "Congratulations you understand the prisoner's dilemma";
         }// end of Test
 
-            private void StayQuiteButton_Click(object sender, RoutedEventArgs e)
+            private void StayQuietButton_Click(object sender, RoutedEventArgs e)
             {
             run++;
-                TestChoice = "StayQuite";
+                TestChoice = "StayQuiet";
                 Test();
             ContinueButton.Opacity = 100;
         }
@@ -294,13 +294,13 @@ namespace PrisonersDilemma
             if (run == 1)
             {
                 ContinueButton.Opacity = 0;
-                Prisoners_Dilemma_textBox.Text = " If you know that your partner is going to give you up what choice should you make so that is it the best choice for you?";
+                Prisoners_Dilemma_textBox.Text = "If you know that your partner is going to give you up, what choice should you make so that is it the best choice for you?";
             }
 
             if (run == 2)
             {
                 ContinueButton.Opacity = 0;
-                Prisoners_Dilemma_textBox.Text = " If you know that your partner isn't going to give you up what choice should you make so that is it the best choice for you?";
+                Prisoners_Dilemma_textBox.Text = "If you know that your partner isn't going to give you up, what choice should you make so that is it the best choice for you?";
             }
         }
     }
